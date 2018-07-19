@@ -1,0 +1,17 @@
+.publication {
+    // &, * { border: 1px solid #f00; }
+    .publication__authors {
+        margin-bottom: 1em;
+    }
+    .publication__details {
+
+    }
+    .publication__meta {
+        text-align: right;
+        font-size: 75%;
+        .publication__link {
+            display: inline-block;
+            margin-bottom: 1em;
+        }
+    }
+}

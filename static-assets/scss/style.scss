@@ -1,0 +1,38 @@
+@import 'normalize';
+@import 'globals';
+@import 'navigation';
+@import 'author';
+@import 'publication';
+
+
+body {
+    font-family: sans-serif;
+}
+
+a, a:hover, a:active, a:visited {
+    color: $teal;
+    transition: color 250ms;
+}
+
+a:hover {
+    color: $teal-darker;
+}
+
+main {
+    padding: 2em;
+}
+
+.fa-external-link-alt {
+    margin-left: 0.5em;
+    font-size: 80%;
+}
+
+.div-list {
+    padding: 1px;
+    .div-list__item {
+        padding: 1em;
+        margin-bottom: 1rem;
+        border: 1px solid $gray-lighter;
+        box-shadow: 0 0 5px 1px $gray-lighter;
+    }
+}

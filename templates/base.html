@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Djoi</title>
+    
+    {% load static %} {# Generates the absolute URL of static files #}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+</head>
+<body class="nav-open">
+    
+    <div id="particles-js"></div>
+    
+    <header>
+        {% block header %}
+            {% include '_partials/header.html' %}
+        {% endblock header %}
+    </header>
+
+    <nav>
+        {% block navigation %}
+            {% include '_partials/navigation.html' %}
+        {% endblock navigation %}
+    </nav>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        {% block footer %}
+            {% include '_partials/footer.html' %}
+        {% endblock footer %}
+    </footer>
+    
+    <script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
+</body>
+</html>

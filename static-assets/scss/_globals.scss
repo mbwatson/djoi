@@ -1,0 +1,24 @@
+$light-amount: 10%;
+$lighter-amount: 15%;
+$lightest-amount: 50%;
+$dark-amount: 10%;
+$darker-amount: 15%;
+$darkest-amount: 35%;
+
+$white: #eee;
+
+$teal: #00cbe7;
+$teal-light: lighten($teal, $light-amount);
+$teal-lighter: lighten($teal, $lighter-amount);
+$teal-lightest: lighten($teal, $lightest-amount);
+$teal-dark: darken($teal, $dark-amount);
+$teal-darker: darken($teal, $darker-amount);
+$teal-darkest: darken($teal, $darkest-amount);
+
+$gray: #999;
+$gray-light: lighten($gray, $light-amount);
+$gray-lighter: lighten($gray, $lighter-amount);
+$gray-lightest: lighten($gray, $lightest-amount);
+$gray-dark: darken($gray, $dark-amount);
+$gray-darker: darken($gray, $darker-amount);
+$gray-darkest: darken($gray, $darkest-amount);

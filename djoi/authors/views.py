@@ -13,18 +13,30 @@ def authors(request):
     }
     return render(request, 'djoi/authors.html', context)
 
+# def author(request, author_slug):
+#     author = get_object_or_404(Author, slug=author_slug)
+#     aliases = author.aliases
+#     dois = author.publication_set.all()
+#     publications = []
+#     for doi in dois:
+#         work = works.doi(doi.doi)
+#         publications.append(publicationObject(work))
+#     context = {
+#         'author': author,
+#         'aliases': aliases,
+#         'dois': dois,
+#         'publications': publications,
+#     }
+#     return render(request, 'djoi/author.html', context)
+
 def author(request, author_slug):
     author = get_object_or_404(Author, slug=author_slug)
     aliases = author.aliases
     dois = author.publication_set.all()
-    publications = []
-    for doi in dois:
-        work = works.doi(doi.doi)
-        publications.append(publicationObject(work))
+    publications = get_list_or_404(Publication)
     context = {
         'author': author,
         'aliases': aliases,
-        'dois': dois,
         'publications': publications,
     }
     return render(request, 'djoi/author.html', context)

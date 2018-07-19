@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Author, Alias, Publication
+from djoi.authors.models import Author, Alias
+from djoi.publications.models import Publication
 
 admin.site.register(Author)
 

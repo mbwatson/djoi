@@ -298,7 +298,7 @@ template {
   display: none; }
 
 nav {
-  background-color: #404040;
+  background-color: #222;
   box-shadow: 0 0 5px 1px gray; }
   nav .nav__list {
     list-style: none;
@@ -331,7 +331,8 @@ nav {
     margin-bottom: 1em; }
 
 body {
-  font-family: sans-serif; }
+  font-family: sans-serif;
+  color: #222; }
 
 a, a:hover, a:active, a:visited {
   color: #00cbe7;

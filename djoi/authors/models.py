@@ -9,7 +9,6 @@ class Author(models.Model):
     first_name = models.CharField(max_length=127, blank=False)
     last_name = models.CharField(max_length=127, blank=False)
     slug = models.SlugField(max_length=255, editable=False, unique=True)
-    # alias = models.ForeignKey(Alias, on_delete=models.CASCADE, null=True, blank=True)
 
     @property
     def full_name(self):
@@ -46,3 +45,6 @@ class Alias(models.Model):
     objects = AliasManager()
     by_author = AliasManager()
 
+    class Meta:
+
+        verbose_name_plural = 'Aliases'

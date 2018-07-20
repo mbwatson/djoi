@@ -6,20 +6,12 @@ from djoi.utils import publicationObject
 from crossref.restful import Works
 works = Works()
 
-# def publications(request):
-#     publications = []
-#     dois = get_list_or_404(Publication)
-#     dois = [doi.doi for doi in dois]
-#     for doi in dois:
-#         work = works.doi(doi=doi)
-#         publications.append(publicationObject(work))
-#     context = {
-#         'publications': publications
-#     }
-#     return render(request, 'djoi/publications.html', context)
-
 def publications(request):
-    publications = get_list_or_404(Publication)
+    publications = []
+    dois = get_list_or_404(Publication)
+    for doi in dois:
+        work = works.doi(doi=doi.doi)
+        publications.append(publicationObject(work))
     context = {
         'publications': publications
     }

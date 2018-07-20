@@ -22,7 +22,7 @@
                 <div class="publication__authors">
                     {% for author in publication.authors %}
                         {% if author.slug %}
-                            <a href="{% url 'djoi.author' author.slug %}">{{ author.given }} {{ author.family }}</a>
+                            <a href="{% url 'djoi.author' author.slug %}">{{ author.full_name }}</a>
                         {% else %}
                             {{ author.full_name }}
                         {% endif %}

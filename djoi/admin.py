@@ -22,6 +22,7 @@ class PublicationAdmin(admin.ModelAdmin):
     def save_related(self, request, form, formsets, change):
         super(PublicationAdmin, self).save_related(request, form, formsets, change)
         work = works.doi(doi=form.instance.doi)
+        form.instance.author.clear()
         for author in work['author']:
             # remove incorrectly assigned authors?
             author_full_name = f'{author["given"]} {author["family"]}'

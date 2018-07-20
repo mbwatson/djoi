@@ -17,6 +17,7 @@ admin.site.register(Author, AuthorAdmin)
 
 class PublicationAdmin(admin.ModelAdmin):
     list_display = ('doi', 'title')
+    exclude = ('author', 'title')
 
     def save_related(self, request, form, formsets, change):
         super(PublicationAdmin, self).save_related(request, form, formsets, change)

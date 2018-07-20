@@ -1,7 +1,6 @@
 from django.contrib import admin
 from djoi.authors.models import Author
 from djoi.publications.models import Publication
-from djoi.staff.models import StaffMember, Alias
 from djoi.utils import getAuthors
 
 from crossref.restful import Works
@@ -9,7 +8,10 @@ works = Works()
 
 #
 
-admin.site.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'staff')
+
+admin.site.register(Author, AuthorAdmin)
 
 #
 
@@ -30,16 +32,3 @@ class PublicationAdmin(admin.ModelAdmin):
             form.instance.author.add(author)
 
 admin.site.register(Publication, PublicationAdmin)
-
-#
-
-admin.site.register(StaffMember)
-
-class AliasAdmin(admin.ModelAdmin):
-    list_display = ['name', 'staff_member', ]
-    
-    def get_queryset(self, request):
-        return super(AliasAdmin,self).get_queryset(request).select_related('staff_member')
-
-admin.site.register(Alias, AliasAdmin)
-

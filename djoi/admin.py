@@ -29,7 +29,7 @@ class PublicationAdmin(admin.ModelAdmin):
     def save_related(self, request, form, formsets, change):
         super(PublicationAdmin, self).save_related(request, form, formsets, change)
         work = works.doi(doi=form.instance.doi)
-        authors = getAuthors(work['author'])
+        authors = [obj for obj in getAuthors(work['author']) if type(obj) is Author]
         for author in authors:
             form.instance.author.add(author)
 

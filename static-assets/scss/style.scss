@@ -4,11 +4,18 @@
 @import 'author';
 @import 'publication';
 
+// Main Blocks
 
 body {
     font-family: sans-serif;
     color: $black;
 }
+
+main {
+    padding: 2em;
+}
+
+// Links
 
 a, a:hover, a:active, a:visited {
     color: $teal;
@@ -19,14 +26,7 @@ a:hover {
     color: $teal-darker;
 }
 
-main {
-    padding: 2em;
-}
-
-.fa-external-link-alt {
-    margin-left: 0.5em;
-    font-size: 80%;
-}
+// Lists
 
 .div-list {
     padding: 1px;
@@ -36,4 +36,15 @@ main {
         border: 1px solid $gray-lighter;
         box-shadow: 0 0 5px 1px $gray-lighter;
     }
+}
+
+//  Icons
+
+.fa-external-link-alt {
+    margin-left: 0.5em;
+    font-size: 80%;
+}
+
+.fa-user {
+    margin-right: 0.5em;
 }

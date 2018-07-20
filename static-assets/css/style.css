@@ -334,19 +334,15 @@ body {
   font-family: sans-serif;
   color: #222; }
 
+main {
+  padding: 2em; }
+
 a, a:hover, a:active, a:visited {
   color: #00cbe7;
   transition: color 250ms; }
 
 a:hover {
   color: #00889b; }
-
-main {
-  padding: 2em; }
-
-.fa-external-link-alt {
-  margin-left: 0.5em;
-  font-size: 80%; }
 
 .div-list {
   padding: 1px; }
@@ -355,5 +351,12 @@ main {
     margin-bottom: 1rem;
     border: 1px solid #bfbfbf;
     box-shadow: 0 0 5px 1px #bfbfbf; }
+
+.fa-external-link-alt {
+  margin-left: 0.5em;
+  font-size: 80%; }
+
+.fa-user {
+  margin-right: 0.5em; }
 
 /*# sourceMappingURL=style.css.map */

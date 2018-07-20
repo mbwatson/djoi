@@ -1,6 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
-from djoi.authors.models import Author, Alias
+from djoi.authors.models import Author
 
 from crossref.restful import Works
 works = Works()

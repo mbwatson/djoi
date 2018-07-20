@@ -1,17 +1,15 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from .models import Publication
-from djoi.authors.models import Author, Alias
+from djoi.authors.models import Author
+from djoi.staff.models import StaffMember
 from djoi.utils import publicationObject
+from django.template.defaultfilters import slugify
 
 from crossref.restful import Works
 works = Works()
 
 def publications(request):
-    publications = []
-    dois = get_list_or_404(Publication)
-    for doi in dois:
-        work = works.doi(doi=doi.doi)
-        publications.append(publicationObject(work))
+    publications = get_list_or_404(Publication)
     context = {
         'publications': publications
     }

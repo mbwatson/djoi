@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
-from .models import Author, Alias
+from .models import Author
 from djoi.publications.models import Publication
 from djoi.utils import publicationObject
 
@@ -15,7 +15,6 @@ def authors(request):
 
 def author(request, author_slug):
     author = get_object_or_404(Author, slug=author_slug)
-    aliases = author.aliases
     publications = []
     dois = author.publication_set.all()
     for doi in dois:
@@ -23,7 +22,6 @@ def author(request, author_slug):
         publications.append(publicationObject(work))
     context = {
         'author': author,
-        'aliases': aliases,
         'publications': publications,
     }
     return render(request, 'djoi/author.html', context)

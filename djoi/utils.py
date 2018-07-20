@@ -1,27 +1,27 @@
-from djoi.authors.models import Author, Alias
+from djoi.authors.models import Author
 from djoi.publications.models import Publication
+from djoi.staff.models import StaffMember, Alias
 
-def findKnownAuthor(author):
+def findStaffAuthor(author):
     first_name = author['given']
     last_name = author['family']
-    known_author = Author.objects.by_name(first_name, last_name).first() or None
-    known_alias = Alias.objects.filter(name=f'{first_name} {last_name}').first() or None
-    if known_author:
-        return known_author
-    elif known_alias:
-        return known_alias.author
-    else:
+    name = f'{first_name} {last_name}'
+    staff_author = StaffMember.objects.by_name(first_name, last_name).first() or None
+    staff_alias = Alias.objects.filter(name=name).first() or None
+    if staff_author:
+        return staff_author
+    elif staff_alias:
         return {
-            'first_name': author['given'],
-            'last_name': author['family'],
-            'full_name': f'{author["given"]} {author["family"]}',
+            'name': staff_alias.name,
+            'slug': staff_alias.staff_member.slug,
         }
+    else:
+        return None
 
 def getAuthors(authors):
     author_objects = []
     for author in authors:
-        known_author = findKnownAuthor(author)
-        author_objects.append(known_author)
+        author_objects.append(findStaffAuthor(author) or { 'name': f'{author["family"]} {author["given"]}', })
     return author_objects
 
 def publicationObject(work):

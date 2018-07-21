@@ -7,6 +7,7 @@
     }
     .publication__authors {
         margin-bottom: 1em;
+        padding-right: 1em;
     }
     .citation__text {
         display: none;
@@ -56,10 +57,32 @@
         }
     }
 }
-body.citationOpen .citation-dialog {
-    display: block;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+
+body {
+    .dialogBackdrop {
+        opacity: 0;
+        transition: opacity 333ms;
+    }
+}
+body.citationOpen {
+    .citation-dialog {
+        display: block;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+    .dialogBackdrop {
+        content: '';
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 100vw;
+        height: 100vh;
+        background-color: $black;
+        transform: translate(-50%, -50%);
+        opacity: 0.75;
+        z-index: 1;
+    }
 }

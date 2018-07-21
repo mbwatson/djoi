@@ -327,7 +327,8 @@ nav {
     margin: 0;
     font-size: 1.5em; }
   .publication .publication__authors {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    padding-right: 1em; }
   .publication .citation__text {
     display: none; }
   .publication .publication__meta {
@@ -368,12 +369,28 @@ nav {
       top: 0.5em;
       cursor: pointer; }
 
+body .dialogBackdrop {
+  opacity: 0;
+  transition: opacity 333ms; }
+
 body.citationOpen .citation-dialog {
   display: block;
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%); }
+  transform: translate(-50%, -50%);
+  z-index: 2; }
+body.citationOpen .dialogBackdrop {
+  content: '';
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #222;
+  transform: translate(-50%, -50%);
+  opacity: 0.75;
+  z-index: 1; }
 
 body {
   font-family: sans-serif;

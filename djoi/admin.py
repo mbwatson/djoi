@@ -25,7 +25,6 @@ class PublicationAdmin(admin.ModelAdmin):
         work = works.doi(doi=form.instance.doi)
         form.instance.author.clear()
         for author in work['author']:
-            # remove incorrectly assigned authors?
             author_full_name = f'{author["given"]} {author["family"]}'
             if Author.objects.filter(name=author_full_name).exists():
                 author = Author.objects.get(name=author_full_name)

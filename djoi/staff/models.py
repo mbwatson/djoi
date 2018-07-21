@@ -1,6 +1,15 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 
+class EmployeeManager(models.Manager):
+    def by_name(self, name):
+        # employee = Employee.objects.filter(name=name).first() or None
+        matches = [emp for emp in Employee.objects.all() if emp.name == name]
+        if matches:
+            return matches[0]
+        else:
+            return None
+
 class Employee(models.Model):
     first_name = models.CharField(max_length=127, blank=False)
     last_name = models.CharField(max_length=127, blank=False)
@@ -17,9 +26,13 @@ class Employee(models.Model):
         self.slug = slugify(self.name)
         super(Employee, self).save(*args, **kwargs)
 
+    objects = EmployeeManager()
+    by_name = EmployeeManager()
+
 class AliasManager(models.Manager):
     def by_employee(self, employee):
         return super(AliasManager, self).filter(employee=employee)
+
 
 class Alias(models.Model):
     name = models.CharField(max_length=127, blank=False)
@@ -30,6 +43,9 @@ class Alias(models.Model):
 
     objects = AliasManager()
     by_employee = AliasManager()
+
+    def owner(self):
+        return Employee.objects.by_name(self.name)
 
     class Meta:
         verbose_name_plural = 'Aliases'

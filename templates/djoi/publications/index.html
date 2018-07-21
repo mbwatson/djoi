@@ -12,13 +12,19 @@
                 <h4 class="publication__title">{{ publication.title }}</h4>
                 
                 <div class="publication__authors">
-                    {% for author in publication.author.all %}
-                        {% if author.is_staff %}
-                            <a href="{% url 'djoi:employee' author.slug %}">{{ author.name }}</a>
-                        {% else %}
-                            {{ author.name }}
-                        {% endif %}
-                    {% endfor %}
+                    <ul>
+                        {% for author in publication.author.all %}
+                            <li style="list-style: none;">
+                                {#
+                                    If author is in staff list,
+                                    show link to page.
+                                    Generate slugs in view to pass in,
+                                    and check for slug here.
+                                #}
+                                {{ author.name }}
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
             
                 <div class="publication__meta">

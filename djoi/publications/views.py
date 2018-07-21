@@ -2,6 +2,7 @@ from django.shortcuts import render, get_list_or_404, get_object_or_404
 from .models import Publication
 from djoi.authors.models import Author
 from djoi.utils import publicationObject
+from django.template.defaultfilters import slugify
 
 from crossref.restful import Works
 works = Works()

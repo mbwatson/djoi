@@ -337,14 +337,13 @@ nav {
     align-items: center;
     width: 2em;
     position: absolute;
-    right: 0;
-    bottom: 0; }
+    right: 0.2em;
+    bottom: 0.5em; }
     .publication .publication__meta .citation__toggler {
       display: inline-block;
       margin-bottom: 1em; }
     .publication .publication__meta .meta__external-link {
-      display: inline-block;
-      margin-bottom: 1em; }
+      display: inline-block; }
 
 .citation-dialog {
   display: none;
@@ -367,7 +366,10 @@ nav {
       position: absolute;
       right: 0.5em;
       top: 0.5em;
-      cursor: pointer; }
+      cursor: pointer;
+      transition: color 250ms; }
+      .citation-dialog .citation-dialog__header .citation-dialog__close-button:hover {
+        color: #e33; }
 
 body .dialog-backdrop {
   opacity: 0;

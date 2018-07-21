@@ -18,8 +18,8 @@ class Employee(models.Model):
         super(Employee, self).save(*args, **kwargs)
 
 class AliasManager(models.Manager):
-    def by_author(self, author):
-        return super(AliasManager, self).filter(author=author)
+    def by_employee(self, employee):
+        return super(AliasManager, self).filter(employee=employee)
 
 class Alias(models.Model):
     name = models.CharField(max_length=127, blank=False)
@@ -29,7 +29,7 @@ class Alias(models.Model):
         return self.name
 
     objects = AliasManager()
-    by_author = AliasManager()
+    by_employee = AliasManager()
 
     class Meta:
         verbose_name_plural = 'Aliases'

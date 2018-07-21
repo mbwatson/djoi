@@ -32,8 +32,3 @@ def publicationObject(work):
     }
     return return_publication
 
-def getCitation(doi):
-    citation_format = 'apa'
-    url = 'https://search.crossref.org/citation?format={citation_format}&doi={doi}'
-    citation = requests.get(url).text
-    return citation

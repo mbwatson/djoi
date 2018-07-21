@@ -1,17 +1,33 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from djoi.authors.models import Author
+from djoi.staff.models import Employee, Alias
+from django.db.models import Q
 
 from crossref.restful import Works
 works = Works()
 
 class PublicationManager(models.Manager):
+    
     def by_name(self, name):
         author = Author.objects.filter(name=name).first() or None
         if author:
             return super(PublicationManager, self).filter(author__name__contains=name)
         else:
             return super(PublicationManager, self)
+    
+    def by_employee(self, employee):
+        # qs = super(PublicationManager, self).filter(author__name__contains=employee.name)
+        # aliases = Alias.objects.by_employee(employee)
+        # for alias in employee.alias_set.all():
+        #     qs = qs | Publication.objects.by_name(alias.name)
+        # return qs
+        q_objects = Q(author__name__contains=employee.name)
+        for alias in employee.alias_set.all():
+            q_objects |= Q(author__name__contains=alias.name)
+        return Publication.objects.filter(q_objects)
+
+
 
 
 class Publication(models.Model):

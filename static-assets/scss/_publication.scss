@@ -18,15 +18,14 @@
         align-items: center;
         width: 2em;
         position: absolute;
-        right: 0;
-        bottom: 0;
+        right: 0.2em;
+        bottom: 0.5em;
         .citation__toggler {
             display: inline-block;
             margin-bottom: 1em;
         }
         .meta__external-link {
             display: inline-block;
-            margin-bottom: 1em;
         }
     }
 }

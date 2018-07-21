@@ -7,11 +7,13 @@
     <div class="div-list authors">
 
         {% for employee in staff %}
+
             <div class="div-list__item author">
                 <a href="{% url 'djoi:employee' employee.slug %}" class="author__link">
                     <i class="far fa-user"></i>{{ employee }}
                 </a>
             </div>
+        
         {% endfor %}
     
     </div>

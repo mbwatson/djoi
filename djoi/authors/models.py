@@ -11,7 +11,7 @@ class AuthorManager(models.Manager):
 class Author(models.Model):
     name = models.CharField(max_length=127, blank=False)
     slug = models.SlugField(max_length=255, editable=False, unique=True)
-    staff = models.BooleanField(default=False)
+    # staff = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

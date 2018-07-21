@@ -12,7 +12,9 @@ def index(request):
 
 def detail(request, employee_slug):
     employee = get_object_or_404(Employee, slug=employee_slug)
+    publications = []
     context = {
         'author': employee,
+        'publications': publications,
     }
     return render(request, 'djoi/staff/detail.html', context)

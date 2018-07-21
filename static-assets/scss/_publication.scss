@@ -1,21 +1,65 @@
 .publication {
+    // *, & { border: 1px solid #f00; }
+    position: relative;
     .publication__title {
-
+        margin: 0;
+        font-size: 1.5em;
     }
     .publication__authors {
         margin-bottom: 1em;
     }
-    .publication__citation {
-        font-size: 85%;
-        color: $gray-light;
-        font-style: italic;
+    .citation__text {
+        display: none;
     }
     .publication__meta {
-        text-align: right;
-        font-size: 75%;
-        .publication__link {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        width: 2em;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        .citation__toggler {
+            display: inline-block;
+            margin-bottom: 1em;
+        }
+        .meta__external-link {
             display: inline-block;
             margin-bottom: 1em;
         }
     }
+}
+
+.citation-dialog {
+    display: none;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 75%;
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    .citation-dialog__header {
+        display: flex;
+        flex-flow: row nowrap;
+        margin-bottom: 1em;
+        .citation-dialog__title {
+            font-size: 125%;
+            flex: 1;
+            font-weight: bold;
+        }
+        .citation-dialog__close-button {
+            font-size: 125%;
+            position: absolute;
+            right: 0.5em;
+            top: 0.5em;
+            cursor: pointer;
+        }
+    }
+}
+body.citationOpen .citation-dialog {
+    display: block;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }

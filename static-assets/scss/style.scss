@@ -30,12 +30,12 @@ a:hover {
 
 .div-list {
     padding: 1px;
-    .div-list__item {
-        padding: 1em;
-        margin-bottom: 1rem;
-        border: 1px solid $gray-lighter;
-        box-shadow: 0 0 5px 1px $gray-lighter;
-    }
+}
+.div-list__item {
+    padding: 1em;
+    margin-bottom: 1rem;
+    border: 1px solid $gray-lighter;
+    box-shadow: 0 0 5px 1px $gray-lighter;
 }
 
 //  Icons

@@ -321,18 +321,59 @@ nav {
 .aliases {
   margin-bottom: 1em; }
 
-.publication .publication__authors {
-  margin-bottom: 1em; }
-.publication .publication__citation {
-  font-size: 85%;
-  color: #b3b3b3;
-  font-style: italic; }
-.publication .publication__meta {
-  text-align: right;
-  font-size: 75%; }
-  .publication .publication__meta .publication__link {
-    display: inline-block;
+.publication {
+  position: relative; }
+  .publication .publication__title {
+    margin: 0;
+    font-size: 1.5em; }
+  .publication .publication__authors {
     margin-bottom: 1em; }
+  .publication .citation__text {
+    display: none; }
+  .publication .publication__meta {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 2em;
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+    .publication .publication__meta .citation__toggler {
+      display: inline-block;
+      margin-bottom: 1em; }
+    .publication .publication__meta .meta__external-link {
+      display: inline-block;
+      margin-bottom: 1em; }
+
+.citation-dialog {
+  display: none;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 75%;
+  max-width: 600px;
+  position: relative;
+  z-index: 1; }
+  .citation-dialog .citation-dialog__header {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-bottom: 1em; }
+    .citation-dialog .citation-dialog__header .citation-dialog__title {
+      font-size: 125%;
+      flex: 1;
+      font-weight: bold; }
+    .citation-dialog .citation-dialog__header .citation-dialog__close-button {
+      font-size: 125%;
+      position: absolute;
+      right: 0.5em;
+      top: 0.5em;
+      cursor: pointer; }
+
+body.citationOpen .citation-dialog {
+  display: block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
 
 body {
   font-family: sans-serif;
@@ -350,11 +391,12 @@ a:hover {
 
 .div-list {
   padding: 1px; }
-  .div-list .div-list__item {
-    padding: 1em;
-    margin-bottom: 1rem;
-    border: 1px solid #bfbfbf;
-    box-shadow: 0 0 5px 1px #bfbfbf; }
+
+.div-list__item {
+  padding: 1em;
+  margin-bottom: 1rem;
+  border: 1px solid #bfbfbf;
+  box-shadow: 0 0 5px 1px #bfbfbf; }
 
 .fa-external-link-alt {
   margin-left: 0.5em;

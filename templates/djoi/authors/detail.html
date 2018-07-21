@@ -14,7 +14,7 @@
 
                 <div class="publication__authors">
                     {% for author in publication.author.all %}
-                        {% if author.staff %}
+                        {% if author.is_staff %}
                             <a href="{% url 'djoi:author' author.slug %}">{{ author.name }}</a>
                         {% else %}
                             {{ author.name }}

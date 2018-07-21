@@ -7,7 +7,6 @@ class AuthorManager(models.Manager):
         author = self.create(name=name)
         return author
 
-
 class Author(models.Model):
     name = models.CharField(max_length=127, blank=False)
 

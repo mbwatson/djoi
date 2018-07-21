@@ -17,18 +17,10 @@ class PublicationManager(models.Manager):
             return super(PublicationManager, self)
     
     def by_employee(self, employee):
-        # qs = super(PublicationManager, self).filter(author__name__contains=employee.name)
-        # aliases = Alias.objects.by_employee(employee)
-        # for alias in employee.alias_set.all():
-        #     qs = qs | Publication.objects.by_name(alias.name)
-        # return qs
         q_objects = Q(author__name__contains=employee.name)
         for alias in employee.alias_set.all():
             q_objects |= Q(author__name__contains=alias.name)
         return Publication.objects.filter(q_objects)
-
-
-
 
 class Publication(models.Model):
     doi = models.CharField(max_length=63, blank=False)

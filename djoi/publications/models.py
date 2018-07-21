@@ -26,7 +26,8 @@ class Publication(models.Model):
     doi = models.CharField(max_length=63, blank=False)
     title = models.CharField(max_length=255, blank=True)
     author = models.ManyToManyField(Author, blank=True)
-
+    citation = models.TextField(null=False, default='Not available')
+    
     def __str__(self):
         return self.doi
 

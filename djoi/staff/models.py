@@ -16,3 +16,20 @@ class Employee(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Employee, self).save(*args, **kwargs)
+
+class AliasManager(models.Manager):
+    def by_author(self, author):
+        return super(AliasManager, self).filter(author=author)
+
+class Alias(models.Model):
+    name = models.CharField(max_length=127, blank=False)
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
+
+    objects = AliasManager()
+    by_author = AliasManager()
+
+    class Meta:
+        verbose_name_plural = 'Aliases'

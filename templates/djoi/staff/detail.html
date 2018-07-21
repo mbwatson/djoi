@@ -60,6 +60,8 @@
         <div class="citation-dialog__text"></div>
     </div>
 
-    <div class="dialogBackdrop"></div>
+    <div class="dialog-backdrop"></div>
 
+    {% load static %} {# Generates the absolute URL of static files #}
+    <script type="text/javascript" src="{% static 'js/citation-toggler.js' %}"></script>
 {% endblock content %}

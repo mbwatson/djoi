@@ -349,7 +349,7 @@ nav {
 .citation-dialog {
   display: none;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 3px;
   width: 75%;
   max-width: 600px;
   position: relative;
@@ -369,18 +369,18 @@ nav {
       top: 0.5em;
       cursor: pointer; }
 
-body .dialogBackdrop {
+body .dialog-backdrop {
   opacity: 0;
   transition: opacity 333ms; }
 
-body.citationOpen .citation-dialog {
+body.citation-open .citation-dialog {
   display: block;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 2; }
-body.citationOpen .dialogBackdrop {
+body.citation-open .dialog-backdrop {
   content: '';
   position: fixed;
   left: 50%;

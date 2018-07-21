@@ -34,7 +34,7 @@
 .citation-dialog {
     display: none;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 3px;
     width: 75%;
     max-width: 600px;
     position: relative;
@@ -59,12 +59,12 @@
 }
 
 body {
-    .dialogBackdrop {
+    .dialog-backdrop {
         opacity: 0;
         transition: opacity 333ms;
     }
 }
-body.citationOpen {
+body.citation-open {
     .citation-dialog {
         display: block;
         position: fixed;
@@ -73,7 +73,7 @@ body.citationOpen {
         transform: translate(-50%, -50%);
         z-index: 2;
     }
-    .dialogBackdrop {
+    .dialog-backdrop {
         content: '';
         position: fixed;
         left: 50%;

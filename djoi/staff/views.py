@@ -4,9 +4,9 @@ from djoi.publications.models import Publication
 from djoi.staff.models import Employee
 
 def index(request):
-    employees = get_list_or_404(Employee)
+    staff = get_list_or_404(Employee)
     context = {
-        'employees': employees,
+        'staff': staff,
     }
     return render(request, 'djoi/staff/index.html', context)
 

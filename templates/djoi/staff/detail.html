@@ -2,15 +2,16 @@
 
 {% block content %}
 
-    <h1>Publications</h1>
+    <h1>{{ author }}</h1>
     
-    <div class="div-list publications">    
+    <div class="div-list publications">
+    
         {% for publication in publications %}
             
             <div class="div-list__item publication">
-            
-                <h4 class="publication__title">{{ publication.title }}</h4>
                 
+                <h4 class="publication__title">{{ publication.title }}</h4>
+
                 <div class="publication__authors">
                     {% for author in publication.author.all %}
                         {% if author.staff %}
@@ -28,8 +29,9 @@
                 </div>
             
             </div>
-
+        
         {% endfor %}
+    
     </div>
 
 {% endblock content %}

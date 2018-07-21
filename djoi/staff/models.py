@@ -16,5 +16,3 @@ class Employee(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Employee, self).save(*args, **kwargs)
-
-    objects = AuthorManager()

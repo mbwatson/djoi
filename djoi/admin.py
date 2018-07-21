@@ -1,6 +1,7 @@
 from django.contrib import admin
 from djoi.authors.models import Author
 from djoi.publications.models import Publication
+from djoi.staff.models import Employee
 from djoi.utils import getAuthors
 
 from crossref.restful import Works
@@ -33,3 +34,5 @@ class PublicationAdmin(admin.ModelAdmin):
             form.instance.author.add(author)
 
 admin.site.register(Publication, PublicationAdmin)
+
+admin.site.register(Employee)

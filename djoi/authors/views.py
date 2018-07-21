@@ -11,7 +11,7 @@ def index(request):
     context = {
         'authors': authors,
     }
-    return render(request, 'djoi/authors.html', context)
+    return render(request, 'djoi/authors/index.html', context)
 
 def detail(request, author_slug):
     author = get_object_or_404(Author, slug=author_slug)
@@ -20,4 +20,4 @@ def detail(request, author_slug):
         'author': author,
         'publications': publications,
     }
-    return render(request, 'djoi/author.html', context)
+    return render(request, 'djoi/authors/detail.html', context)

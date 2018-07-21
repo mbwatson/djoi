@@ -11,4 +11,4 @@ def publications(request):
     context = {
         'publications': publications
     }
-    return render(request, 'djoi/publications.html', context)
+    return render(request, 'djoi/publications/index.html', context)

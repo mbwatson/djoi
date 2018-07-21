@@ -4,6 +4,15 @@
 
     <h1>{{ author }}</h1>
     
+    <div class="aliases">
+        {% if author.alias_set.all %}
+            Aliases:
+            {% for alias in author.alias_set.all %}
+                {{ alias }}
+            {% endfor %}
+        {% endif %}
+    </div>
+    
     <div class="div-list publications">
     
         {% for publication in publications %}

@@ -323,6 +323,10 @@ nav {
 
 .publication .publication__authors {
   margin-bottom: 1em; }
+.publication .publication__citation {
+  font-size: 85%;
+  color: #b3b3b3;
+  font-style: italic; }
 .publication .publication__meta {
   text-align: right;
   font-size: 75%; }

@@ -1,10 +1,14 @@
 .publication {
-    // &, * { border: 1px solid #f00; }
+    .publication__title {
+
+    }
     .publication__authors {
         margin-bottom: 1em;
     }
-    .publication__details {
-
+    .publication__citation {
+        font-size: 85%;
+        color: $gray-light;
+        font-style: italic;
     }
     .publication__meta {
         text-align: right;

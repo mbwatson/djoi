@@ -53,6 +53,10 @@
             right: 0.5em;
             top: 0.5em;
             cursor: pointer;
+            transition: color 250ms;
+            &:hover {
+                color: $red;
+            }
         }
     }
 }

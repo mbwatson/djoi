@@ -16,7 +16,7 @@ def index(request):
 
 def detail(request, employee_slug):
     employee = get_object_or_404(Employee, slug=employee_slug)
-    publications = Publication.objects.by_name(employee.name)
+    publications = Publication.objects.by_employee(employee)
     context = {
         'author': employee,
         'publications': publications,

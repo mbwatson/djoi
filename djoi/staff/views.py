@@ -10,9 +10,13 @@ def index(request):
     }
     return render(request, 'djoi/staff/index.html', context)
 
+    # lookup_names = [employee.name]
+    # for alias in employee.alias_set.all():
+    #     lookup_names.append(alias.name)
+
 def detail(request, employee_slug):
     employee = get_object_or_404(Employee, slug=employee_slug)
-    publications = []
+    publications = Publication.objects.by_name(employee.name)
     context = {
         'author': employee,
         'publications': publications,

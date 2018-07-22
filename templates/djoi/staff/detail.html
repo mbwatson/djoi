@@ -24,13 +24,13 @@
                 <div class="publication__authors">
                     {% for author in publication.author.all %}
                         {% if author.alias %}
-                            <a href="{% url 'djoi:employee' author.slug %}">{{ author.name }}</a>
+                            <a href="{% url 'djoi:employee' author.slug %}">{{ author.name }}</a>{% if not forloop.last %},{% endif %}
                         {% else %}
-                            {{ author.name }}
+                            {{ author.name }}{% if not forloop.last %},{% endif %}
                         {% endif %}
                     {% endfor %}
                 </div>
-            
+           
                 <div class="citation__text doi{{ publication.doi|slugify }}">
                     {{ publication.citation }}                    
                 </div>

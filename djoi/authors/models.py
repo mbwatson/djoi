@@ -30,5 +30,4 @@ class Author(models.Model):
         else:
             return None
 
-
     objects = AuthorManager()

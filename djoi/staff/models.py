@@ -44,15 +44,11 @@ class Alias(models.Model):
 
     objects = AliasManager()
     by_employee = AliasManager()
-
-    @property
-    def owner(self):
-        return [emp for emp in Employee.objects.all() if emp.name == self.name][0] or None
-
+    
     @property
     def slug(self):
         return self.employee.slug
     
-
     class Meta:
-        verbose_name_plural = 'Aliases'
+        verbose_name = 'Employee Alias'
+        verbose_name_plural = 'Employee Aliases'

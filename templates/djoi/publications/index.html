@@ -12,17 +12,13 @@
                 <h4 class="publication__title">{{ publication.title }}</h4>
                 
                 <div class="publication__authors">
-                    <ul>
-                        {% for author in publication.author.all %}
-                            <li style="list-style: none;">
-                                {% if author.alias %}
-                                    <a href="{% url 'djoi:employee' author.slug %}">{{ author.name }}</a>
-                                {% else %}
-                                    {{ author.name }}
-                                {% endif %}
-                            </li>
-                        {% endfor %}
-                    </ul>
+                    {% for author in publication.author.all %}
+                        {% if author.alias %}
+                            <a href="{% url 'djoi:employee' author.slug %}">{{ author.name }}</a>{% if not forloop.last %},{% endif %}
+                        {% else %}
+                            {{ author.name }}{% if not forloop.last %},{% endif %}
+                        {% endif %}
+                    {% endfor %}
                 </div>
             
                 <div class="citation__text doi{{ publication.doi|slugify }}">

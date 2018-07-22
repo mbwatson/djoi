@@ -1,1 +1,1 @@
-console.log('Zotero!')
+console.log('nav.js loaded')

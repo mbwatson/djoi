@@ -25,6 +25,7 @@ class Employee(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Employee, self).save(*args, **kwargs)
+        Alias.objects.create(name=self.name, employee=self)
 
     objects = EmployeeManager()
     by_name = EmployeeManager()
@@ -43,9 +44,11 @@ class Alias(models.Model):
 
     objects = AliasManager()
     by_employee = AliasManager()
-
-    def owner(self):
-        return Employee.objects.by_name(self.name)
-
+    
+    @property
+    def slug(self):
+        return self.employee.slug
+    
     class Meta:
-        verbose_name_plural = 'Aliases'
+        verbose_name = 'Employee Alias'
+        verbose_name_plural = 'Employee Aliases'

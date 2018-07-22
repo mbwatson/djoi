@@ -17,4 +17,18 @@ class Author(models.Model):
         self.slug = slugify(self.name)
         super(Author, self).save(*args, **kwargs)
 
+    @property
+    def alias(self):
+        alias = Alias.objects.filter(name=self.name).first() or None
+        return alias
+
+    @property
+    def slug(self):
+        alias = self.alias
+        if alias is not None:
+            return alias.slug
+        else:
+            return None
+
+
     objects = AuthorManager()

@@ -325,7 +325,8 @@ nav {
   position: relative; }
   .publication .publication__title {
     margin: 0;
-    font-size: 1.5em; }
+    font-size: 125%;
+    margin-bottom: 0.5em; }
   .publication .publication__authors {
     margin-bottom: 1em;
     padding-right: 1em; }

@@ -4,6 +4,5 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('djoi.urls')),
-    path('djoi/', include('djoi.urls')),
+    path('', include('djoi.urls')), # Send all request through to DjOI
 ]

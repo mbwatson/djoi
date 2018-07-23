@@ -5,9 +5,9 @@
     <h1>{{ author }}</h1>
     
     <div class="aliases">
-        {% if author.alias_set.all %}
-            <i class="fas fa-angle-right"></i>
-            {% for alias in author.alias_set.all %}
+        {% if author.alias_set.all|slice:"1:"  %}
+            <strong>AKA</strong> <i class="fas fa-angle-right"></i>
+            {% for alias in author.alias_set.all|slice:"1:"  %}
                 "<em>{{ alias }}</em>"{% if not forloop.last %},{% endif %}
             {% endfor %}
         {% endif %}

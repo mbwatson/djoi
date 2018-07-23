@@ -330,9 +330,9 @@ nav {
   .publication .publication__authors {
     margin-bottom: 1em;
     padding-right: 1em; }
-  .publication .citation__text {
+  .publication .publication__citation {
     display: none; }
-  .publication .publication__meta {
+  .publication .publication__extras {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -340,33 +340,26 @@ nav {
     position: absolute;
     right: 0.2em;
     bottom: 0.5em; }
-    .publication .publication__meta .citation__toggler {
-      display: inline-block;
-      margin-bottom: 1em; }
-    .publication .publication__meta .meta__external-link {
-      display: inline-block; }
+    .publication .publication__extras .publication__citation-toggler {
+      margin-bottom: 5px; }
 
 .citation-dialog {
   display: none;
   background-color: #fff;
   border-radius: 3px;
   width: 75%;
-  max-width: 600px;
+  max-width: 750px;
   position: relative;
   z-index: 1; }
   .citation-dialog .citation-dialog__header {
     display: flex;
-    flex-flow: row nowrap;
-    margin-bottom: 1em; }
+    flex-flow: row nowrap; }
     .citation-dialog .citation-dialog__header .citation-dialog__title {
       font-size: 125%;
       flex: 1;
       font-weight: bold; }
     .citation-dialog .citation-dialog__header .citation-dialog__close-button {
       font-size: 125%;
-      position: absolute;
-      right: 0.5em;
-      top: 0.5em;
       cursor: pointer;
       transition: color 250ms; }
       .citation-dialog .citation-dialog__header .citation-dialog__close-button:hover {

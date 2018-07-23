@@ -21,15 +21,20 @@
                     {% endfor %}
                 </div>
             
-                <div class="citation__text doi{{ publication.doi|slugify }}">
-                    {{ publication.citation }}
+                <div class="publication__citation doi{{ publication.doi|slugify }}">
+                    <div class="citation__title title{{ publication.doi|slugify }}">
+                        {{ publication.title }}
+                    </div>
+                    <div class="citation__text text{{ publication.doi|slugify }}">
+                        {{ publication.citation }}
+                    </div>
                 </div>
 
-                <div class="publication__meta">
-                    <a class="citation__toggler" href="#">
+                <div class="publication__extras">
+                    <a class="publication__citation-toggler" href="#">
                         <i class="fas fa-tag" data-doi="{{ publication.doi|slugify }}" ></i>
                     </a>
-                    <a class="meta__external-link" href="https://doi.org/{{ publication.doi }}" target="_blank">
+                    <a class="publication__external-link" href="https://doi.org/{{ publication.doi }}" target="_blank">
                         <i class="fas fa-external-link-square-alt"></i>
                     </a>
                 </div>
@@ -41,7 +46,7 @@
 
     <div class="div-list__item citation-dialog">
         <div class="citation-dialog__header">
-            <div class="citation-dialog__title">Title</div>
+            <div class="citation-dialog__title"></div>
             <div class="citation-dialog__close-button">
                 <i class="fa fa-times" aria-hidden="true"></i>
             </div>

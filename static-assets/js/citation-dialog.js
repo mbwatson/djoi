@@ -34,5 +34,11 @@ document.addEventListener('keypress', (e) => {
 })
 
 citationDialogCopyButton.addEventListener('click', (e) => {
-    console.log('copy not yet implemented.')
+    const textarea = document.createElement('textarea')
+    citation = e.target.parentElement.previousElementSibling.innerText
+    textarea.value = citation
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand('copy')
+    document.body.removeChild(textarea)
 })

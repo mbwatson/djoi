@@ -1,4 +1,4 @@
-const citationTogglers = document.querySelectorAll('.citation__toggler')
+const citationTogglers = document.querySelectorAll('.publication__citation-toggler')
 const citationDialog = document.querySelector('.citation-dialog')
 const citationDialogTitle = document.querySelector('.citation-dialog__title')
 const citationDialogText = document.querySelector('.citation-dialog__text')
@@ -11,9 +11,10 @@ function hideCitationDialog() {
 
 function showCitationDialog(e) {
     e.preventDefault()
-    console.log(e.target)
-    let doi = e.target.dataset.doi
-    let citationText = document.querySelector(`.doi${doi}`).innerText
+    const doi = e.target.dataset.doi
+    const citationTitle = document.querySelector(`.title${doi}`).innerText
+    const citationText = document.querySelector(`.text${doi}`).innerText
+    citationDialogTitle.innerText = citationTitle
     citationDialogText.innerText = citationText
     document.body.classList.add('citation-open')
 }

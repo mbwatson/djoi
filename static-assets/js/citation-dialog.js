@@ -1,9 +1,10 @@
 const citationTogglers = document.querySelectorAll('.publication__citation-toggler')
 const citationDialog = document.querySelector('.citation-dialog')
 const citationDialogTitle = document.querySelector('.citation-dialog__title')
-const citationDialogText = document.querySelector('.citation-dialog__text')
+const citationDialogText = document.querySelector('.citation-dialog__citation__text')
 const dialogCloser = document.querySelector('.citation-dialog__close-button')
 const dialogBackdrop = document.querySelector('.dialog-backdrop')
+const citationDialogCopyButton = document.querySelector('.citation-dialog__citation__copy-button')
 
 function hideCitationDialog() {
     document.body.classList.remove('citation-open')
@@ -30,4 +31,8 @@ document.addEventListener('keypress', (e) => {
     if (e.keyCode === 27) {
         hideCitationDialog()
     }
+})
+
+citationDialogCopyButton.addEventListener('click', (e) => {
+    console.log('copy not yet implemented.')
 })

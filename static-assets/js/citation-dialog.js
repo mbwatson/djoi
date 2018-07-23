@@ -15,8 +15,8 @@ function showCitationDialog(e) {
     const doi = e.target.dataset.doi
     const citationTitle = document.querySelector(`.title${doi}`).innerText
     const citationText = document.querySelector(`.text${doi}`).innerText
-    citationDialogTitle.innerText = citationTitle
-    citationDialogText.innerText = citationText
+    citationDialogTitle.innerText = citationTitle.trim()
+    citationDialogText.innerText = citationText.trim()
     document.body.classList.add('citation-open')
 }
 

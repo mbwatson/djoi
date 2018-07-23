@@ -306,14 +306,18 @@ nav {
     padding: 0;
     display: flex;
     flex-direction: row; }
-    nav .nav__list li a {
+    nav .nav__list .nav__list-item a {
       color: #eee;
       text-decoration: none;
       display: inline-block;
       text-transform: uppercase;
       padding: 1rem; }
-      nav .nav__list li a:hover {
+      nav .nav__list .nav__list-item a:hover {
         color: #00cbe7; }
+    nav .nav__list .nav__list-item a.admin:hover {
+      color: #e33; }
+    nav .nav__list .nav__list-spacer {
+      flex: 1; }
 
 .author .author__link {
   display: inline-block; }

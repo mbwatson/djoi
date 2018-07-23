@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Home</h1>
+
+    <div class="div-list summary">
+
+        <div class="div-list__item summary__item">
+            <h3 class="summary__item-title">Publications ({{ publications|length }})</h3>
+            <div class="summary__item-details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi quod ab quis, dolorem enim fugiat accusantium neque dolore magni modi excepturi necessitatibus. Necessitatibus, repellendus, dolor! Cumque expedita atque soluta et.</p>
+                <i class="fas fa-angle-right"></i>
+                <a href="{% url 'djoi:publications' %}" class="summary__item-link">Publications</a>
+            </div>
+        </div>
+
+        <div class="div-list__item summary__item">
+            <h3 class="summary__item-title">Employees ({{ staff|length }})</h3>
+            <div class="summary__item-details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam recusandae fuga doloremque cumque ut placeat vel consequatur in sunt dolor accusamus vitae omnis accusantium nobis provident, magni eius reprehenderit nulla?</p>
+                <i class="fas fa-angle-right"></i>
+                <a href="{% url 'djoi:staff' %}" class="summary__item-link">Staff</div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock content %}

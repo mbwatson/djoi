@@ -8,7 +8,7 @@
         {% if author.alias_set.all %}
             Aliases:
             {% for alias in author.alias_set.all %}
-                {{ alias }}
+                {{ alias }}{% if not forloop.last %},{% endif %}
             {% endfor %}
         {% endif %}
     </div>

@@ -21,9 +21,15 @@
                     {% endfor %}
                 </div>
             
-                <div class="citation__text doi{{ publication.doi|slugify }}">
-                    {{ publication.citation }}                    
+                <div class="publication__citation doi{{ publication.doi|slugify }}">
+                    <div class="citation__title title{{ publication.doi|slugify }}">
+                        {{ publication.title }}
+                    </div>
+                    <div class="citation__text text{{ publication.doi|slugify }}">
+                        {{ publication.citation }}
+                    </div>
                 </div>
+
                 <div class="publication__extras">
                     <a class="publication__citation-toggler" href="#">
                         <i class="fas fa-tag" data-doi="{{ publication.doi|slugify }}" ></i>

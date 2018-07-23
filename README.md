@@ -14,9 +14,9 @@ First, be sure you have Python and Django installed on your system.
 
 `pip3 install Django==2.0.7`
 
-We also make use of crossrefapi.
+The data gathered by this tool is through the [https://github.com/CrossRef/rest-api-doc](Crossref REST API) with the [https://github.com/fabiobatalha/crossrefapi](Crossref API Client) library for python.
 
-`pip3 install crossref`
+`pip3 install crossrefapi`
 
 ### Installing
 

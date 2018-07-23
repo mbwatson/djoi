@@ -1,0 +1,19 @@
+<div class="div-list__item citation-dialog">
+    <div class="citation-dialog__header">
+        <div class="citation-dialog__title"></div>
+        <div class="citation-dialog__close-button">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="citation-dialog__citation">
+        <textarea class="citation-dialog__citation__text"></textarea>
+        <div class="citation-dialog__citation__copy-button">
+            <i class="fas fa-copy"></i>
+        </div>
+    </div>
+</div>
+
+<div class="dialog-backdrop"></div>
+
+{% load static %} {# Generates the absolute URL of static files #}
+<script type="text/javascript" src="{% static 'js/citation-dialog.js' %}"></script>

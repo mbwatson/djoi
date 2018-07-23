@@ -368,6 +368,25 @@ nav {
       transition: color 250ms; }
       .citation-dialog .citation-dialog__header .citation-dialog__close-button:hover {
         color: #e33; }
+  .citation-dialog .citation-dialog__citation {
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    margin-top: 1em;
+    position: relative;
+    overflow: hidden; }
+    .citation-dialog .citation-dialog__citation .citation-dialog__citation__text {
+      width: 100%;
+      height: 100px; }
+    .citation-dialog .citation-dialog__citation .citation-dialog__citation__copy-button {
+      font-size: 125%;
+      cursor: pointer;
+      transition: color 250ms;
+      position: absolute;
+      right: 0.25em;
+      bottom: 0.25em;
+      color: #b3b3b3; }
+      .citation-dialog .citation-dialog__citation .citation-dialog__citation__copy-button:hover {
+        color: #999; }
 
 body .dialog-backdrop {
   opacity: 0;

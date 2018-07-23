@@ -56,18 +56,6 @@
     
     </div>
 
-    <div class="div-list__item citation-dialog">
-        <div class="citation-dialog__header">
-            <div class="citation-dialog__title">Title</div>
-            <div class="citation-dialog__close-button">
-                <i class="fa fa-times" aria-hidden="true"></i>
-            </div>
-        </div>
-        <div class="citation-dialog__text"></div>
-    </div>
+    {% include 'djoi/_partials/citation-dialog.html' %}
 
-    <div class="dialog-backdrop"></div>
-
-    {% load static %} {# Generates the absolute URL of static files #}
-    <script type="text/javascript" src="{% static 'js/citation-toggler.js' %}"></script>
 {% endblock content %}

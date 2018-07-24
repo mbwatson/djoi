@@ -10,6 +10,10 @@ works = Works()
 
 class PublicationManager(models.Manager):
     
+    def create_publication(self, doi):
+        publication = self.create(doi=doi)
+        return publication
+
     def by_name(self, name):
         author = Author.objects.filter(name=name).first() or None
         if author:

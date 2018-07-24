@@ -8,14 +8,10 @@ class AuthorManager(models.Manager):
         return author
 
 class Author(models.Model):
-    name = models.CharField(max_length=127, blank=False)
+    name = models.CharField(max_length=127, blank=False, unique=True)
 
     def __str__(self):
         return self.name
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super(Author, self).save(*args, **kwargs)
 
     @property
     def alias(self):

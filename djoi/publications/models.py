@@ -24,7 +24,7 @@ class PublicationManager(models.Manager):
         return Publication.objects.filter(q_objects)
 
 class Publication(models.Model):
-    doi = models.CharField(max_length=63, blank=False)
+    doi = models.CharField(max_length=63, blank=False, unique=True)
     title = models.CharField(max_length=255, blank=True)
     author = models.ManyToManyField(Author, blank=True)
     citation = models.TextField(blank=True, null=False, default='Not available')

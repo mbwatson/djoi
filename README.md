@@ -35,14 +35,14 @@ Otherwise you will receive the error  `name 'include' is not defined` because th
 
 Now, let's add the necessary tables by executing the following commands.
 
-```python
-python3 manage.py makemigrations
+```bash
+$ python3 manage.py makemigrations
 ```
 
 and
 
-```python
-python3 manage.py migrate
+```bash
+$ python3 manage.py migrate
 ```
 
 Make sure your development server is up and running. If not, execute

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+    <h1>Publications</h1>
+    
+    {% for publication in publications %}
+
+        <h3>{{ publication.title }}</h3>
+        <ul>
+            <li><strong>Authors:</strong>
+                {% for author in publication.author.all %}
+                    {% if author.slug %}
+                        <a href="{% url 'djoi:employee' author.slug %}">{{ author.name }}</a>{% if not forloop.last %},{% endif %}
+                    {% else %}
+                        {{ author.name }}{% if not forloop.last %},{% endif %}
+                    {% endif %}
+                {% endfor %}
+            </li>
+            <li><strong>Citation:</strong> {{ publication.citation }}</li>
+            <li><a href="https://doi.org/{{ publication.doi }}" target="_blank">{{ publication.doi }}</a></li>
+        </ul>
+
+    {% endfor %}
+
+
+{% endblock content %}

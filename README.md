@@ -53,31 +53,31 @@ $ python3 manage.py runserver`
 
 Point your browser at `localhost:8000/djoi` to see a fairly plain welcome page with some links to a Publications page and a Staff page, both of which are empty initially.
 
-### The API
+### How to Use
+
+#### The API
 
 The content of the tables are accessible in your templates ina  fairly straight-forward manner.
 
-##### The Employee Model
+###### The Employee Model
 
 An `Employee` object `employee` consists of `employee.first_name`, `employee.last_name`, `employee.name`, and `employee.slug`. Each employee's aliases are accessible as a queryset via `employee.alias_set` in your template, and you can apply normal queryset mthods, such as `first` and `all`.
 
-##### The Alias Model
+###### The Alias Model
 
 The `Alias` model is quite simple, and it's only purpose is the bridge between publications' authors and your staff list. An `Alias` object `alias` knows its name through `alias.name`, and it knows the employee for which it is an alias via `alias.employee`.
 
-##### The Publication Model
+###### The Publication Model
 
 The `Publication` model knows its DOI `publication.doi`, its title `publication.title`, its citation `publication.citation`, and queryset of set of authors `publication.author`, and you can apply normal queryset mthods, such as `first` and `all`.
 
 Note that the publication's DOI is used to link to the permanent location of the document online: `https://doi.org/{{ publication.doi }}`.
 
-##### The Author Model
+###### The Author Model
 
 An `Author` object `author` is simply a name, accessed with `author.name`, that knows the alias object it is related to (provided it *is* in fact related to one) via `author.alias`. If it is indeed related to an alias, then it is related to a coreesponding author, as well. Thus the `author` objects knows the slug which will take you to the author's page, `author.slug`.
 
-### How to Use: An Example
-
-##### With the Admin UI
+#### Using the Admin UI: an Example
 
 For the sake of having an instructional exmaple, suppose your organization has two staff members: Richard Stanley and Bruce Sagan (two of my favorite mathematicians). In the Django Admin panel, add these two employees by entering their first and last names.
 
@@ -95,7 +95,7 @@ In the Admin panel, we'll add an alias. Press the Add Employee Alias button, cho
 
 Head back to view the publications list and author's page to see the publications' author lists populated with links. All links point to the original author's page with a slug, e.g., `bruce-sagan` in thise case.
 
-##### With the Shell
+#### Using the Shell: the Same Example Continued
 
 You can, of course, test the saved information by opening up a shell with `python3 manage shell` in your project's root directory and importing the models from the DjOI module with the following commands.
 

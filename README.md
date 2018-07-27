@@ -79,7 +79,7 @@ An `Author` object `author` is simply a name, accessed with `author.name`, that 
 
 #### Using the Admin UI: an Example
 
-For the sake of having an instructional exmaple, suppose your organization has two staff members: Richard Stanley and Bruce Sagan (two of my favorite mathematicians). In the Django Admin panel, add these two employees by entering their first and last names.
+This repository comes with some simple sample templates to illustrate how to use the objects in your templates. For the sake of having an instructional exmaple, suppose your organization has two staff members: Richard Stanley and Bruce Sagan (two of my favorite mathematicians). In the Django Admin panel, add these two employees by entering their first and last names.
 
 Now, upon navigating to the staff page at `localhost:8000/djoi/staff`, you'll find those staff members. Clicking on each of their names takes you to a dynamically rendered page that displays his publications. Let's change that by adding some publications.
 

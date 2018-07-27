@@ -65,7 +65,7 @@ An `Employee` object `employee` consists of `employee.first_name`, `employee.las
 
 ###### The Alias Model
 
-The `Alias` model is quite simple, and it's only purpose is the bridge between publications' authors and your staff list. An `Alias` object `alias` knows its name through `alias.name`, and it knows the employee for which it is an alias via `alias.employee`.
+The `Alias` model is quite simple, and its only purpose is the bridge between publications' authors and your staff list. An `Alias` object `alias` knows its name through `alias.name`, and it knows the employee for which it is an alias via `alias.employee`.
 
 ###### The Publication Model
 
